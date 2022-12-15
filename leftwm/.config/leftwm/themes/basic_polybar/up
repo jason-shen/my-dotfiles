@@ -26,9 +26,9 @@ leftwm-command "LoadTheme $SCRIPTPATH/theme.ron"
 #  fi
 
 #boot pnmixer exists
-if [ -x "$(command -v pnmixer)" ]; then
-  pnmixer &
-fi
+# if [ -x "$(command -v pnmixer)" ]; then
+#   pnmixer &
+# fi
 
 #boot flameshot exists
 if [ -x "$(command -v flameshot)" ]; then
