@@ -34,6 +34,9 @@ leftwm-command "LoadTheme $SCRIPTPATH/theme.ron"
 if [ -x "$(command -v flameshot)" ]; then
   flameshot &
 fi
+if [ -x "$(command -v blueman-applet)" ]; then
+  blueman-applet &
+fi
 
 # startup apps
  /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &

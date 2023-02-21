@@ -1,136 +1,88 @@
-;==========================================================
-;
-;
-;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
-;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
-;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
-;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
-;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
-;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-;
-;
-;   To learn more about how to configure Polybar
-;   go to https://github.com/jaagr/polybar
-;
-;   The README contains a lot of information
-;
-;==========================================================
-
 [colors]
-background = #99222222
-foreground = #dfdfdf
-background-alt = #99444444
-foreground-alt = #FFFFFF
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+; Tokyo Night Dark theme ============
+background = #24283b
+foreground = #c0caf5
+alert = #e06c75
+volume-min = #a3be8c
+volume-med = #ebcb8b
+volume-max = #bf616a
+pink = #f7768e
+orange = #ff9e64
+dark-orange = #e0af68
 green = #9ece6a
+teal = #73daca
+light-blue = #b4f9f8
+cyan = #2ac3de
+blue = #7dcfff
+blurple = #7aa2f7
+purple = #bb9af7
+light-purple = #c0caf5
+light-dark-purple = #a9b1d6
+dark-purple = #9aa5ce
+beige = #cfc9c2
+really-dark-purple = #565f89
+black = #414868
+really-black = #24283b
+blacker = #1a1b26
 
-
-[bar/mainbar0]
-inherit = bar/barbase
-modules-left = workspace0
-[module/workspace0]
-type = custom/script
-exec = leftwm-state -w 0 -t $SCRIPTPATH/template.liquid
-tail = true
-
-[bar/mainbar1]
-inherit = bar/barbase
-modules-left = workspace1
-[module/workspace1]
-type = custom/script
-exec = leftwm-state -w 1 -t $SCRIPTPATH/template.liquid
-tail = true
-
-[bar/mainbar2]
-inherit = bar/barbase
-modules-left = workspace2
-[module/workspace2]
-type = custom/script
-exec = leftwm-state -w 2 -t $SCRIPTPATH/template.liquid
-tail = true
-
-[bar/mainbar3]
-inherit = bar/barbase
-modules-left = workspace3
-[module/workspace3]
-type = custom/script
-exec = leftwm-state -w 3 -t $SCRIPTPATH/template.liquid
-tail = true
-
-
-[bar/barbase]
-width = ${env:width}
-offset-x = ${env:offsetx}
-monitor = ${env:monitor}
-;offset-y = ${env:y}
-;width = 98%
-;offset-x = 1%
-;offset-y = 0.5%
-;radius = 6.0
-height = 28
+[bar/bar1]
+;monitor = ${env:MONITOR:HDMI-1}
+width = 90%
+height = 22
+offset-x = 5% 
+offset-y = 1%
+radius = 9.0
+fixed-center = true
+bottom = false
 separator = |
-fixed-center = false
+
 background = ${colors.background}
 foreground = ${colors.foreground}
+
 line-size = 3
 line-color = #f00
-border-size = 0
-border-color = #00000000
+
+;border-size = 4
+;border-color = #00000000
+
 padding-left = 0
-padding-right = 2
+padding-right = 1
+
 module-margin-left = 1
 module-margin-right = 2
-font-0 = "JetBrains Nerd Font:size=10;2"
-font-1 = "FontAwesome:size=13:4"
-font-2 = "JetBrains Nerd Font:size=10;2"
-font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=13;4"
-font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=13;4"
+
+font-0 = "JetBrainsMono Nerd Font:size=10;2"
+font-1 = "JetBrainsMono Nerd Font:size=10;2"
+font-2 = "JetBrainsMono Nerd Font:size=10;2"
+font-3 = "Font Awesome 5 Free:style=Regular::pixelsize=13;4"
+font-4 = "Font Awesome 5 Free:style=Solid::pixelsize=13;4"
 font-5 = "Font Awesome 5 Brands:pixelsize=13;4"
 
-modules-center =
-modules-right = date pulseaudio filesystem memory cpu wlan eth temperature powermenu
+modules-center = 
+modules-right = filesystem xbacklight pulseaudio xkeyboard memory cpu wlan eth battery temperature data powermenu 
+
 tray-position = right
 tray-padding = 2
+;tray-background = #0063ff
+
+;wm-restack = bspwm
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
 cursor-click = pointer
 cursor-scroll = ns-resize
-
-[module/ewmh]
-type = internal/xworkspaces
-label-active = " %icon% %name%  "
-label-active-foreground = ${colors.foreground-alt}
-label-active-background = ${colors.background-alt}
-label-active-underline = ${colors.primary}
-label-occupied = " %icon% %name%  "
-label-occupied-underline = ${colors.secondary}
-label-urgent = " %icon% %name%  "
-label-urgent-foreground = ${colors.foreground}
-label-urgent-background = ${colors.background}
-label-urgent-underline  = ${colors.alert}
-label-empty = " %icon% %name%  "
-label-empty-foreground = ${colors.foreground}
-
 
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
-
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
-
-label-layout = %layout%
-label-layout-underline = ${colors.secondary}
-
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
+label-foreground = ${colors.pink}
 
 [module/filesystem]
 type = internal/fs
@@ -145,21 +97,38 @@ label-unmounted-foreground = ${colors.foreground-alt}
 [module/bspwm]
 type = internal/bspwm
 
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
+label-focused = %icon% 
+label-focused-background = ${colors.background}
+label-focused-foreground = ${colors.orange}
+;label-focused-underline= ${colors.primary}
+label-focused-padding = 1
 
-label-occupied = %index%
-label-occupied-padding = 2
+label-occupied = %icon%
+label-occupied-background = ${colors.background}
+label-occupied-foreground = ${colors.blue}
+label-occupied-padding = 1
 
-label-urgent = %index%!
+label-urgent = %icon%!
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 1
 
-label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+label-empty = %icon%
+label-empty-foreground = ${colors.foreground}
+label-empty-padding = 1
+
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+ws-icon-default = 
+
 
 ; Separator in between workspaces
 ; label-separator = |
@@ -179,13 +148,13 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${module/bspwm.label-focused-background}
-label-focused-underline = ${module/bspwm.label-focused-underline}
-label-focused-padding = ${module/bspwm.label-focused-padding}
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
@@ -195,8 +164,8 @@ label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
-label-urgent-background = ${module/bspwm.label-urgent-background}
-label-urgent-padding = ${module/bspwm.label-urgent-padding}
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
 
 ; Separator in between workspaces
 ; label-separator = |
@@ -240,22 +209,22 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+format-prefix = " "
+format-prefix-foreground = ${colors.light-blue}
+;format-underline = #f90000
 label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+format-prefix = " "
+format-prefix-foreground = ${colors.dark-orange}
+;format-underline = #4bffdc
 label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlp3s0
+interface = net1
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -277,7 +246,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = enp0s25
+interface = vmnet8
 interval = 3.0
 
 format-connected-underline = #55aa55
@@ -293,16 +262,19 @@ format-disconnected =
 
 [module/date]
 type = internal/date
-;date =    %%{F#99}%m/%d/%Y%%{F-}  %%{F#fff}%I:%M %p%{F-}
-;date-alt = %%{F#fff}%A, %B %d, %Y  %%{F#fff}%I:%M:%{F#666}%%{F#fba922}%S%%{F-} %p
 interval = 5
+
 date =
 date-alt = " %Y-%m-%d"
+
 time = %H:%M
 time-alt = %H:%M:%S
-format-prefix = "  "
+
+format-prefix = ""
 format-prefix-foreground = ${colors.green}
+format-foreground = ${colors.purple}
 ;format-underline = #0a6cf5
+
 label = %date% %time%
 
 [module/pulseaudio]
@@ -363,7 +335,7 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 [module/battery]
 type = internal/battery
 battery = BAT0
-adapter = AC
+adapter = ADP1
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
@@ -419,7 +391,7 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = "  "
+label-open = 
 label-open-foreground = ${colors.secondary}
 label-close =  cancel
 label-close-foreground = ${colors.secondary}
@@ -444,11 +416,44 @@ menu-2-1-exec = menu-open-0
 [module/music]
 type = custom/script
 interval = 120
-format-prefix = "  "
-;forat-prefix-foreground = 
-exec = bash /usr/
+format-prefix = " "
+format-prefix-foreground = ${colors.cyan}
+exec = bash /usr/local/bin/mpd.sh
+click-left = "alacritty --class "mus,mus" -e ncmpcpp"
+
+[module/mail]
+type = custom/script
+interval = 120
+format-prefix = " "
+format-prefix-foreground = ${colors.orange}
+exec = bash /usr/local/bin/newmail.sh
+click-left = "alacritty --class "mail,mail" -e mail"
 
 
+[module/updates]
+type = custom/script
+interval = 120
+format-prefix = " "
+format-prefix-foreground = ${colors.orange}
+exec = tail -1 ~/.config/updates
+click-left = "alacritty --class "term,term" -e htop"
+
+[module/weather]
+type = custom/script
+interval = 10
+format = <label>
+format-prefix =" "
+format-prefix-foreground = ${colors.green}
+exec = python -u /usr/local/bin/weather.py
+tail = true
+
+[module/upt]
+type = custom/script
+interval = 120
+format-prefix = " "
+format-prefix-foreground = ${colors.orange}
+exec = bash /usr/local/bin/upt.sh
+click-left = "alacritty --class "term,term" -e htop"
 [settings]
 screenchange-reload = true
 ;compositing-background = xor
@@ -457,8 +462,12 @@ screenchange-reload = true
 ;compositing-border = over
 ;pseudo-transparency = false
 
-;[global/wm]
-;margin-top = 5
-;margin-bottom = 5
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+
 
 ; vim:ft=dosini
+
+

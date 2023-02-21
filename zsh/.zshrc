@@ -99,15 +99,16 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --height=80%"
 eval "$(starship init zsh)"
 export PATH=$PATH:/usr/local/go/bin
 export VISUAL=nvim;
 export EDITOR=nvim;
 alias development="~/development/"
 alias frame="~/development/work/frame/"
-alias rm="trash -v"
 alias home="~/"
-alias vim="nvim"
+#alias vim="nvim"
 alias vi="nvim"
 alias zb='cvlc https://ais-nzme.streamguys1.com/nz_002_aac'
 alias gfm='cvlc https://tunein-icecast.mediaworks.nz/george_128kbps'
