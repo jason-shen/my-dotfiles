@@ -1,8 +1,8 @@
 -- general lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.colorscheme = "tokyonight"
--- lvim.transparent_window = true
-
+lvim.transparent_window = true
+lvim.format_on_save = true
 vim.opt.gdefault = true
 vim.opt.ignorecase = true
 vim.opt.linebreak = true
@@ -10,7 +10,7 @@ vim.opt.linebreak = true
 vim.api.nvim_set_keymap("n", ";", ":", { noremap = true })
 vim.api.nvim_set_keymap("v", ";", ":", { noremap = true })
 vim.api.nvim_set_keymap("v", ";", ":", { noremap = true })
-
+vim.opt.clipboard = "unnamedplus"
 
 -- vim.api.nvim_set_keymap("i", "jk", "<esc>", { noremap = true })
 
@@ -143,7 +143,7 @@ formatters.setup {
 
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
-  -- { command = "eslint_d", filetypes = { "javascript", "typescript", "typescriptreact", "javascriptreact" } },
+  { command = "eslint_d", filetypes = { "javascript", "typescript", "typescriptreact", "javascriptreact" } },
   {
     command = "shellcheck",
     extra_args = { "--severity", "warning" },

@@ -103,15 +103,17 @@ export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --height=80%"
 eval "$(starship init zsh)"
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/home/jason/.cargo/bin
+export PATH=/home/jason/.local/bin:$PATH
 export VISUAL=nvim;
 export EDITOR=nvim;
 alias development="~/development/"
 alias frame="~/development/work/frame/"
 alias home="~/"
-#alias vim="nvim"
+alias vim="lvim"
 alias vi="nvim"
 alias zb='cvlc https://ais-nzme.streamguys1.com/nz_002_aac'
 alias gfm='cvlc https://tunein-icecast.mediaworks.nz/george_128kbps'
 alias mai='cvlc https://tunein-icecast.mediaworks.nz/maifm_128kbps'
-. /usr/share/autojump/autojump.sh
+#. /usr/share/autojump/autojump.sh
 neofetch
