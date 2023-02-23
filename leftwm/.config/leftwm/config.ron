@@ -63,7 +63,7 @@
         (command: Execute, value: "discord", modifier: ["modkey"], key: "d"),
         (command: Execute, value: "skypeforlinux", modifier: ["modkey"], key:"m"),
         (command: Execute, value: "thunar", modifier: ["modkey", "Shift"], key: "f"),
-        (command: Execute, value: "chromium", modifier: ["modkey"], key: "b"),
+        (command: Execute, value: "google-chrome-stable", modifier: ["modkey"], key: "b"),
         (command: Execute, value: "rofi -modi drun -show drun -line padding 4 -hide-scrollbar -show-icons", modifier: ["modkey"], key: "r"),
         (command: CloseWindow, value: "", modifier: ["modkey"], key: "q"),
         (command: SoftReload, value: "", modifier: ["modkey", "Shift"], key: "r"),
