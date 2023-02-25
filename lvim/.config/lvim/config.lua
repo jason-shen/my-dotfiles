@@ -6,7 +6,7 @@ lvim.format_on_save = true
 vim.opt.gdefault = true
 vim.opt.ignorecase = true
 vim.opt.linebreak = true
-
+vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
 vim.api.nvim_set_keymap("n", ";", ":", { noremap = true })
 vim.api.nvim_set_keymap("v", ";", ":", { noremap = true })
 vim.api.nvim_set_keymap("v", ";", ":", { noremap = true })
@@ -138,7 +138,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
-  { command = "prettier", filetypes = { "typescript", "typescriptreact" } }
+  -- { command = "prettier", filetypes = { "typescript", "typescriptreact" } }
 }
 
 local linters = require "lvim.lsp.null-ls.linters"
