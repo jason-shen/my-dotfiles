@@ -143,7 +143,7 @@ formatters.setup {
 
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
-  { command = "eslint_d", filetypes = { "javascript", "typescript", "typescriptreact", "javascriptreact" } },
+  { command = "eslint", filetypes = { "vue", "javascript", "typescript", "typescriptreact", "javascriptreact" } },
   {
     command = "shellcheck",
     extra_args = { "--severity", "warning" },
@@ -162,7 +162,7 @@ lvim.plugins = {
     end
   },
   { "tpope/vim-eunuch" },
-  -- { "github/copilot.vim" },
+  { "github/copilot.vim" },
   {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",

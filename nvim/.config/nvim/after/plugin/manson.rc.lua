@@ -26,7 +26,6 @@ mason_lspconfig.setup({
     "html",
     "cssls",
     "tailwindcss",
-    "sumneko_lua",
     "rust_analyzer",
     "gopls",
     "vuels",

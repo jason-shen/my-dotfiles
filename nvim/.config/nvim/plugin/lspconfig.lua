@@ -184,7 +184,7 @@ lspconfig["vuels"].setup({
 })
 
 -- configure lua server (with special settings)
-lspconfig["sumneko_lua"].setup({
+lspconfig["lua_ls"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
   settings = { -- custom settings for lua
@@ -193,13 +193,8 @@ lspconfig["sumneko_lua"].setup({
       diagnostics = {
         globals = { "vim" },
       },
-      workspace = {
-        -- make language server aware of runtime files
-        library = {
-          [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-          [vim.fn.stdpath("config") .. "/lua"] = true,
-        },
-      },
+      workspace = { checkThirdParty = false },
+      telemetry = { enable = false },
     },
   },
 })
